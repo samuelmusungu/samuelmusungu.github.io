@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Samuel Musungu — Full-Stack Developer</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBhMGEwYSIvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNTUlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiAKICAgIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjkwMCIgZm9udC1zaXplPSIxMyIgCiAgICBmaWxsPSIjMDBmZjg3Ij5TTTwvdGV4dD4KPC9zdmc+">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -548,6 +549,147 @@
     margin: 0 4rem;
   }
 
+
+  /* PROJECT IMAGES */
+  .project-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--border);
+    background: var(--bg3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+  }
+  .project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .project-card:hover .project-img img {
+    transform: scale(1.04);
+  }
+  .project-img-placeholder {
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(135deg, #161616, #1a1a1a);
+    border-radius: 4px;
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--muted);
+  }
+  /* WHATSAPP FLOAT */
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    background: #25D366;
+    color: #fff;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .wa-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+  }
+  .wa-float-pulse {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.4);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    70% { transform: scale(1.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 0; }
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-section { background: var(--bg2); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .testimonial-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .testimonial-card:hover {
+    border-color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+  }
+  .testimonial-quote {
+    font-size: 2.5rem;
+    color: var(--accent);
+    font-family: 'Syne', sans-serif;
+    line-height: 1;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+  }
+  .testimonial-text {
+    color: #aaa;
+    font-size: 0.83rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .testimonial-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #000;
+    flex-shrink: 0;
+  }
+  .testimonial-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .testimonial-role {
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
   /* SCROLLBAR */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
@@ -583,9 +725,137 @@
     footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
     .divider { margin: 0 1.5rem; }
   }
+
+  /* PRELOADER */
+  #preloader {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0a;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+
+  #preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .preloader-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #00ff87, #00c9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: preloaderFadeIn 0.7s 0.2s forwards;
+  }
+
+  .preloader-phrase {
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(0.65rem, 2vw, 0.8rem);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #444;
+    opacity: 0;
+    animation: preloaderFadeIn 0.7s 0.5s forwards;
+  }
+
+  .preloader-phrase span {
+    color: #00ff87;
+  }
+
+  .preloader-bar-wrap {
+    width: min(320px, 70vw);
+    height: 1px;
+    background: #1a1a1a;
+    border-radius: 1px;
+    overflow: hidden;
+    opacity: 0;
+    animation: preloaderFadeIn 0.5s 0.7s forwards;
+  }
+
+  .preloader-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00ff87, #00c9ff);
+    border-radius: 1px;
+    animation: loadBar 1.6s 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .preloader-counter {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    animation: preloaderFadeIn 0.5s 0.8s forwards;
+    min-width: 3ch;
+    text-align: center;
+  }
+
+  .preloader-dots {
+    display: flex;
+    gap: 0.4rem;
+    opacity: 0;
+    animation: preloaderFadeIn 0.5s 0.6s forwards;
+  }
+
+  .preloader-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #00ff87;
+    animation: dotPulse 1.2s infinite ease-in-out;
+  }
+
+  .preloader-dot:nth-child(2) { animation-delay: 0.2s; background: #00d9a0; }
+  .preloader-dot:nth-child(3) { animation-delay: 0.4s; background: #00c9ff; }
+
+  @keyframes preloaderFadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes loadBar {
+    0% { width: 0%; }
+    60% { width: 75%; }
+    100% { width: 100%; }
+  }
+
+  @keyframes dotPulse {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.6); opacity: 1; }
+  }
+
 </style>
 </head>
 <body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-logo">SM_</div>
+  <div class="preloader-phrase">Building the <span>future</span> — one line at a time</div>
+  <div class="preloader-dots">
+    <div class="preloader-dot"></div>
+    <div class="preloader-dot"></div>
+    <div class="preloader-dot"></div>
+  </div>
+  <div class="preloader-bar-wrap">
+    <div class="preloader-bar"></div>
+  </div>
+  <div class="preloader-counter" id="preloaderCounter">0%</div>
+</div>
+
 
 <!-- NAV -->
 <nav>
@@ -595,6 +865,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="https://linkedin.com/in/samuelmusungu" target="_blank">LinkedIn ↗</a></li>
   </ul>
   <a href="#contact" class="btn btn-primary" style="padding:0.6rem 1.4rem; font-size:0.72rem;">Hire Me</a>
 </nav>
@@ -609,6 +880,7 @@
   <div class="hero-cta">
     <a href="#projects" class="btn btn-primary">View My Work →</a>
     <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    <a href="#" class="btn btn-outline" id="cvBtn" onclick="alert('Add your CV PDF link here!'); return false;">Download CV ↓</a>
   </div>
   <div class="hero-stats">
     <div>
@@ -674,6 +946,7 @@
   <h2 class="section-title reveal">Projects</h2>
   <div class="projects-grid">
     <div class="project-card reveal">
+      <div class="project-img-placeholder">🏢</div>
       <span class="project-tag">Agency</span>
       <h3 class="project-title">HighDesign Agency</h3>
       <p class="project-desc">Founded and operate a digital agency delivering web development, design, and operations services. Directed end-to-end project execution and client communications across multiple industries.</p>
@@ -685,6 +958,7 @@
       </div>
     </div>
     <div class="project-card reveal">
+      <div class="project-img-placeholder">🎓</div>
       <span class="project-tag">Ed-Tech</span>
       <h3 class="project-title">EduBridge Kenya Platform</h3>
       <p class="project-desc">Spearheaded development of a scholarship management platform improving student access across Kenya. Implemented secure data architecture and UX flows used by hundreds of applicants.</p>
@@ -696,6 +970,7 @@
       </div>
     </div>
     <div class="project-card reveal">
+      <div class="project-img-placeholder">💻</div>
       <span class="project-tag">Web Dev</span>
       <h3 class="project-title">Web Development Projects</h3>
       <p class="project-desc">A range of front-end and full-stack builds for clients — responsive websites, landing pages, and interactive web applications with clean code and performant delivery.</p>
@@ -707,6 +982,7 @@
       </div>
     </div>
     <div class="project-card reveal">
+      <div class="project-img-placeholder">🌿</div>
       <span class="project-tag">Client Website</span>
       <h3 class="project-title">Moss Karen Website</h3>
       <p class="project-desc">Designed and developed a clean, professional website for Moss Karen — a business based in the Karen area of Nairobi. Focused on local brand presence, responsive design, and a smooth user experience.</p>
@@ -719,6 +995,7 @@
       <a href="https://github.com/samuelmusungu" target="_blank" style="display:inline-block; margin-top:1rem; font-size:0.72rem; color:var(--accent); text-decoration:none; letter-spacing:0.05em;">View on GitHub →</a>
     </div>
     <div class="project-card reveal">
+      <div class="project-img-placeholder">🤖</div>
       <span class="project-tag">AI / Data</span>
       <h3 class="project-title">AI Training & Annotation</h3>
       <p class="project-desc">Contributed to AI model training pipelines through data annotation, prompt evaluation, and RLHF feedback tasks. Delivered high-quality, consistent outputs for AI research workflows.</p>
@@ -776,6 +1053,11 @@
       <div class="contact-detail"><span>📍</span><span>Nairobi, Kenya</span></div>
       <div class="contact-detail"><span>🕐</span><span>Available Full-Time (6+ hrs/day)</span></div>
       <div class="contact-detail"><span>🌐</span><span>Remote — Worldwide</span></div>
+      <div style="margin-top:1.5rem;">
+        <a href="https://wa.me/254757436746" target="_blank" class="btn btn-primary" style="background:#25D366; box-shadow: 0 4px 20px rgba(37,211,102,0.3);">
+          💬 WhatsApp Me
+        </a>
+      </div>
     </div>
     <form class="contact-form reveal" id="contactForm">
       <div class="form-row">
@@ -805,6 +1087,65 @@
 
 <div class="divider"></div>
 
+<div class="divider"></div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials-section">
+  <p class="section-label reveal">// client feedback</p>
+  <h2 class="section-title reveal">What Clients Say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text">HighDesign Agency's modular systems and strategic dashboards reflect a deep understanding of development sector needs. Their work aligns with the kind of impact-driven digital transformation I've seen succeed across Africa.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">PW</div>
+        <div>
+          <div class="testimonial-name">Peter Witthaut, MSc BSc</div>
+          <div class="testimonial-role">International Development Consultant · GIZ</div>
+        </div>
+      </div>
+      <div style="margin-top:1rem; color:#f5c518; font-size:0.85rem;">★★★★★</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text">Their farm system helped me digitize everything — from dairy yield tracking to crop rotation planning. It's now easier to manage staff, monitor inputs, and scale sustainably. I recommend them to any serious farmer.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">JN</div>
+        <div>
+          <div class="testimonial-name">Jimmy Nabwera</div>
+          <div class="testimonial-role">Founder · Nabwera Farm, Trans Nzoia</div>
+        </div>
+      </div>
+      <div style="margin-top:1rem; color:#f5c518; font-size:0.85rem;">★★★★★</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text">We run a hospitality retreat rooted in sustainability. HighDesign Agency helped us integrate booking flows, garden tours, and guest feedback into one seamless platform. Their work reflects our values and vision.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">AD</div>
+        <div>
+          <div class="testimonial-name">Adrian</div>
+          <div class="testimonial-role">Owner · Karen Little Paradise, Nairobi</div>
+        </div>
+      </div>
+      <div style="margin-top:1rem; color:#f5c518; font-size:0.85rem;">★★★★★</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text">Their civic engagement platform helped us reach thousands of Nairobi residents with real-time updates and feedback loops. It's rare to find a team that blends UX, accessibility, and civic purpose so well.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">GM</div>
+        <div>
+          <div class="testimonial-name">Dr. Grace Muthoni</div>
+          <div class="testimonial-role">Director · Urban Sustainability Lab, Nairobi</div>
+        </div>
+      </div>
+      <div style="margin-top:1rem; color:#f5c518; font-size:0.85rem;">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+
 <!-- GITHUB -->
 <section id="github" style="background: var(--bg);">
   <p class="section-label reveal">// open source</p>
@@ -827,7 +1168,36 @@
   </div>
 </footer>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254757436746" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <div class="wa-float-pulse"></div>
+  💬
+</a>
+
+
 <script>
+
+  // PRELOADER
+  const preloader = document.getElementById('preloader');
+  const counter = document.getElementById('preloaderCounter');
+  let count = 0;
+  const interval = setInterval(() => {
+    count += Math.floor(Math.random() * 12) + 4;
+    if (count >= 100) {
+      count = 100;
+      clearInterval(interval);
+      counter.textContent = '100%';
+      setTimeout(() => {
+        preloader.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 400);
+    }
+    counter.textContent = count + '%';
+  }, 80);
+
+  // Prevent scroll during preload
+  document.body.style.overflow = 'hidden';
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
