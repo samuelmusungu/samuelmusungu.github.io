@@ -1,36 +1,50 @@
-# Samuel Musungu — Portfolio
+# Samuel Musungu, portfolio
 
-Personal portfolio website for Samuel Musungu, Full-Stack Developer & AI Data Specialist based in Nairobi, Kenya.
+Personal portfolio for Samuel Musungu: full-stack developer, AI data specialist and technical recruiter in Nairobi.
 
-🌐 Live site: https://samuelmusungu.github.io
+Live: https://samuelmusungu.github.io
 
-## About
-Built with HTML, CSS & JavaScript. Features:
-- Project showcase
-- Skills & services
-- Contact form
-- GitHub integration
+## Stack
 
-## Tech Stack
-HTML · CSS · JavaScript
+Plain HTML, CSS and JavaScript. No build step, so GitHub Pages serves it as is.
 
-## Contact
-musungusam2000@gmail.com
+## Structure
+
+```
+index.html            the whole site (markup, styles, scripts)
+assets/profile.jpg    profile photo
+assets/cv.pdf         CV, linked from the hero, nav and footer
+assets/projects/      project screenshots (WebP)
+.nojekyll             tells GitHub Pages to serve every file as is
 ```
 
-- Click **Commit changes**
+## Editing content
 
----
+All copy is in the arrays at the top of the `<script>` block in `index.html`:
 
-**Step 4 — Enable GitHub Pages**
-- Click **Settings** (top menu of your repo)
-- Scroll down to **Pages** (left sidebar)
-- Under **Source** → select **Deploy from a branch**
-- Branch: **main** · Folder: **/ (root)**
-- Click **Save**
+| Array | Controls |
+| --- | --- |
+| `ROLES` | Words rotating in the hero |
+| `SKILLS`, `SKILL_CATS` | About section skill bars and tags |
+| `ENGAGEMENTS` | Talent sourcing engagement models |
+| `MARKETS` | Africa, Europe and Latin America cards |
+| `PIPELINE` | Six-step sourcing process |
+| `WHY` | Talent section differentiators |
+| `SERVICES` | Services grid (the first entry is the featured one) |
+| `PROJECTS` | Project cards and case-study modal. Add an `img` path or leave it `null` for a typographic card |
+| `TESTIMONIALS` | Client quotes |
 
----
+GitHub repos are loaded live from the public API for `GH_USER`. If the request fails, a link to the profile is shown instead.
 
-**Step 5 — Wait 3–5 minutes then visit:**
-```
-https://samuelmusungu.github.io
+The contact form opens the visitor's email app with the message filled in, so no server is needed.
+
+## Deploying
+
+Push to the `main` branch of `samuelmusungu.github.io`. In repo Settings, Pages should be set to deploy from `main`, root folder. The site updates a few minutes after each push.
+
+## Before going live
+
+- Confirm the email address. The old site used musungusamuel21@gmail.com and the old README used musungusam2000@gmail.com. The site uses the first.
+- Replace `assets/cv.pdf` with your latest CV if it has changed.
+- Refresh the HighDesign Agency screenshot if the live site has changed since the old capture.
+- Check the talent claims (tools, languages and engagement terms) match how you actually work.
